@@ -1,9 +1,51 @@
 services:
-  postgres:
+
+# Copy/paste postgres1 block and adjust accordingly for more instances
+# Things to change: postgresX, TF_VAR_admin_user_pass_X,
+# 5432 (port). The localhost listening port can not be the same.
+
+# <change me>
+  postgres1:
     image: postgres:latest
     restart: unless-stopped
     environment:
       POSTGRES_USER: mysuperduperuser
-      POSTGRES_PASSWORD: ${TF_VAR_admin_user_pass}
+      POSTGRES_PASSWORD: ${TF_VAR_admin_user_pass_1}
     ports:
       - "127.0.0.1:5432:5432" 
+
+  postgres2:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: mysuperduperuser
+      POSTGRES_PASSWORD: ${TF_VAR_admin_user_pass_2}
+    ports:
+      - "127.0.0.1:5433:5432" 
+
+  postgres3:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: mysuperduperuser
+      POSTGRES_PASSWORD: ${TF_VAR_admin_user_pass_3}
+    ports:
+      - "127.0.0.1:5434:5432" 
+
+  postgres4:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: mysuperduperuser
+      POSTGRES_PASSWORD: ${TF_VAR_admin_user_pass_4}
+    ports:
+      - "127.0.0.1:5435:5432" 
+
+  postgres5:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: mysuperduperuser
+      POSTGRES_PASSWORD: ${TF_VAR_admin_user_pass_5}
+    ports:
+      - "127.0.0.1:5436:5432" 
