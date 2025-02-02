@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: mysuperduperuser
+      POSTGRES_PASSWORD: ${TF_VAR_admin_user_pass}
+    ports:
+      - "127.0.0.1:5432:5432" 
